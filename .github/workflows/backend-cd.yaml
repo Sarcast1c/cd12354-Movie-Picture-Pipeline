@@ -140,11 +140,5 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           cd k8s
-          kubectl delete service backend --ignore-not-found=true
           kustomize edit set image backend=$REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           kustomize build | kubectl apply -f -
-          kubectl get pods -o wide
-          kubectl get svc backend -o wide
-          kubectl get endpoints backend -o wide
-          kubectl get nodes -o wide
-          kubectl describe pods -l app=backend
