@@ -146,3 +146,5 @@ jobs:
           kubectl get pods -o wide
           kubectl get svc backend -o wide
           kubectl get endpoints backend -o wide
+          kubectl get nodes -o wide
+          kubectl describe pods -l app=backend
