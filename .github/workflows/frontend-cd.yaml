@@ -105,7 +105,7 @@ jobs:
       - name: Build, tag, and push image to Amazon ECR
         env:
           REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          REACT_APP_MOVIE_API_URL: http://localhost:5000
+          REACT_APP_MOVIE_API_URL: http://adc122af160aa4415b8129cc3b53d82b-137285971.us-east-1.elb.amazonaws.com
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build \
